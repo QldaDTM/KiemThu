@@ -1,0 +1,52 @@
+{
+  "name": "class",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "mongodb": {
+      "collection": "classes"
+    }
+  },
+  "hidden": [
+    "removed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "classId": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "numberOfStudents": {
+      "type": "number"
+    },
+    "regulationId": {
+      "type": "string"
+    },
+    "programId": {
+      "type": "string"
+    },
+    "removed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "fieldOfStudy": {
+      "type": "belongsTo",
+      "model": "fieldOfStudy",
+      "foreignKey": "fieldOfStudyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,60 @@
+{
+  "name": "fieldOfStudy",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "plural": "fieldsOfStudy",
+  "indexes": {
+    "removed_index": {
+      "keys": {
+        "removed": 1
+      }
+    }
+  },
+  "options": {
+    "validateUpsert": true,
+    "mongodb": {
+      "collection": "fieldsOfStudy"
+    }
+  },
+  "hidden": [
+    "removed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true,
+      "id": true
+    },
+    "fieldOfStudyId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "string"
+    },
+    "abbrev": {
+      "type": "string"
+    },
+    "enrollmentId": {
+      "type": "string"
+    },
+    "removed": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "classes": {
+      "type": "hasMany",
+      "model": "class",
+      "foreignKey": "fieldOfStudyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
